@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace PawsiblePals.Models
 {
+    //Will create the rows of info, filled by database.
     public class Pet
     {
         public int PetID { get; set; }
