@@ -63,5 +63,9 @@ namespace PawsiblePals.Controllers
         {
             return View();
         }
+        public IActionResult Donations()
+        {
+            return View();
+        }
     }
 }
