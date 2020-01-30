@@ -53,7 +53,7 @@ namespace PawsiblePals.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PetID,Age,Weight,Color,Breed,Temperment,Sex")] Pet pet)
+        public async Task<IActionResult> Create([Bind("PetID,Age,Weight,Color,Breed,Temperment,Gender")] Pet pet)
         {
             if (ModelState.IsValid)
             {

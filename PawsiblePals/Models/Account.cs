@@ -8,9 +8,10 @@ namespace PawsiblePals.Models
 {
     public class Account : IdentityUser
     {
-        
-        //public int AccountID { get; set; }
-        //public string Email { get; set; }
-        //public string Password
+
+        public int accountID { get; set; }
+        public string email { get; set; }
+        public string password { get; set; }
+
     }
 }
