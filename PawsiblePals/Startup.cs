@@ -1,8 +1,8 @@
 // King Mark is best king
-//Brinatubs
+//SABRINA-INA-INA
 //Dabs for success.
 // Leave me alone! :)
-//Denice is my favorite.
+//Denice is my favorite. *favourite*
 using System;
 using System.Collections.Generic;
 using System.Linq;
