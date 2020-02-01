@@ -10,7 +10,7 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: beige; background-color:limegreen;
+  color: limegreen;
 }
 background{
     color:beige;
