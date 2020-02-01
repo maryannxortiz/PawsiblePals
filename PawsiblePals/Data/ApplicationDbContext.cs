@@ -17,6 +17,7 @@ namespace PawsiblePals.Data
         {
         }
         public DbSet<Pet> Pets { get; set; }//this is a table in the database.
+        public DbSet<Photo> Photos { get; set; }
 
     }
 
