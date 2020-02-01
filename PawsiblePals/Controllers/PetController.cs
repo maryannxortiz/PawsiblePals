@@ -11,6 +11,7 @@ namespace PawsiblePals.Controllers
 {
     public class PetsController : Controller
     {
+        
         private readonly ApplicationDbContext _context;
 
         public PetsController(ApplicationDbContext context)
