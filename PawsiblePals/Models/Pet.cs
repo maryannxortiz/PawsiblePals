@@ -9,6 +9,7 @@ namespace PawsiblePals.Models
     public class Pet
     {
         public string PetName { get; set; }
+        public int Species { get; set; }
         public int PetID { get; set; }
         public int Age { get; set; }
         public int Weight { get; set; }

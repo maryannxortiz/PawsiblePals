@@ -245,6 +245,12 @@ namespace PawsiblePals.Data.Migrations
                     b.Property<bool>("PetFriendly")
                         .HasColumnType("bit");
 
+                    b.Property<string>("PetName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Species")
+                        .HasColumnType("int");
+
                     b.Property<int>("Weight")
                         .HasColumnType("int");
 

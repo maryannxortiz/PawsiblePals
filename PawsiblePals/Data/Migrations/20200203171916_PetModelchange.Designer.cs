@@ -10,8 +10,8 @@ using PawsiblePals.Data;
 namespace PawsiblePals.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200201201053_first")]
-    partial class first
+    [Migration("20200203171916_PetModelchange")]
+    partial class PetModelchange
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -247,12 +247,39 @@ namespace PawsiblePals.Data.Migrations
                     b.Property<bool>("PetFriendly")
                         .HasColumnType("bit");
 
+                    b.Property<string>("PetName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Species")
+                        .HasColumnType("int");
+
                     b.Property<int>("Weight")
                         .HasColumnType("int");
 
                     b.HasKey("PetID");
 
                     b.ToTable("Pets");
+                });
+
+            modelBuilder.Entity("PawsiblePals.Models.Photo", b =>
+                {
+                    b.Property<int>("PhotoID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("MimeType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte[]>("PhotoData")
+                        .HasColumnType("varbinary(max)");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("PhotoID");
+
+                    b.ToTable("Photos");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

@@ -10,7 +10,7 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: beige;
+  color: black;
   /*Navbar has links, please dont make this the same color as the navbar..*/
 }
 background{
