@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using PawsiblePals.Data;
@@ -12,17 +13,22 @@ namespace PawsiblePals.Controllers
 {
     public class HomeController : Controller
     {
+        //creating ID
         private readonly ILogger<HomeController> _logger;
+        private readonly UserManager<IdentityUser> _userManager;
         private readonly ApplicationDbContext _context;
+        private ApplicationDbContext context;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationDbContext context)
+        public HomeController(ILogger<HomeController> logger, UserManager<IdentityUser> userManager)
         {
             _context = context;
             _logger = logger;
+            _userManager = userManager;
         }
 
         public IActionResult Index()
-        { 
+        {
+            var user = _userManager.GetUserAsync(User);
             return View();
         }
 
