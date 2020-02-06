@@ -10,10 +10,10 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
-  color: black;
-  /*Navbar has links, please dont make this the same color as the navbar..*/
+    color: black;
+    /*Navbar has links, please dont make this the same color as the navbar..*/
 }
-background{
+.background{
     color:beige;
 }
 .btn-primary {
@@ -28,8 +28,7 @@ background{
   border-color: #1861ac;
 }
 navbar{
-    background-color:white;
-    border-color: pink;
+    
 }
 nav{
     background-color:limegreen;

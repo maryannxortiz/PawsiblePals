@@ -10,8 +10,8 @@ using PawsiblePals.Data;
 namespace PawsiblePals.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200203171916_PetModelchange")]
-    partial class PetModelchange
+    [Migration("20200206172712_blorp")]
+    partial class blorp
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -231,15 +231,18 @@ namespace PawsiblePals.Data.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<int>("Breed")
-                        .HasColumnType("int");
+                    b.Property<string>("Breed")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Color")
-                        .HasColumnType("int");
+                    b.Property<string>("Color")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Gender")
                         .IsRequired()
                         .HasColumnType("nvarchar(1)");
+
+                    b.Property<bool>("Neutered")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("PeopleFriendly")
                         .HasColumnType("bit");
@@ -250,8 +253,8 @@ namespace PawsiblePals.Data.Migrations
                     b.Property<string>("PetName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Species")
-                        .HasColumnType("int");
+                    b.Property<string>("Species")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Weight")
                         .HasColumnType("int");
