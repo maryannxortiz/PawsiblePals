@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PawsiblePals.Data;
 using PawsiblePals.Models;
@@ -46,6 +47,11 @@ namespace PawsiblePals.Controllers
         // GET: Pets/Create
         public IActionResult Create()
         {
+            var Pet = _context.
+                Pets.Select(x =>
+                new SelectListItem(x.PetName, x.PetID.ToString()))
+                .ToList();
+            ViewBag.Pet = Pet;
             return View();
         }
 

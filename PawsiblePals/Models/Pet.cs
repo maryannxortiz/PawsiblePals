@@ -13,7 +13,7 @@ namespace PawsiblePals.Models
     //Will create the rows of info, filled by database.
     public class Pet
     {
-        [Key]
+        
         public int PetID { get; set; }
         public string PetName { get; set; }
         public string Species { get; set; }
