@@ -12,8 +12,7 @@ namespace PawsiblePals.Models
         public int accountID { get; set; }
         //public int UserName { get; set; }
         public ICollection<Pet> Pet { get; set; }//this holds the instance of multiple pets.
-        public string email { get; set; }
-        public string password { get; set; }
+       
 
     }
 }

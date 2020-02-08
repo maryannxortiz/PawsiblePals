@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PawsiblePals.Data;
+using PawsiblePals.Models;
 
 [assembly: HostingStartup(typeof(PawsiblePals.Areas.Identity.IdentityHostingStartup))]
 namespace PawsiblePals.Areas.Identity

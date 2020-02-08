@@ -10,7 +10,7 @@ using PawsiblePals.Data;
 
 namespace PawsiblePals.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<Account>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
