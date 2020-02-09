@@ -15,11 +15,11 @@ namespace PawsiblePals.Controllers
     {
         //creating ID
         private readonly ILogger<HomeController> _logger;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<PawsiblePals.Models.Account> _userManager;
         private readonly ApplicationDbContext _context;
-        private ApplicationDbContext context;
+        private readonly ApplicationDbContext context;
 
-        public HomeController(ILogger<HomeController> logger, UserManager<IdentityUser> userManager)
+        public HomeController(ILogger<HomeController> logger, UserManager<PawsiblePals.Models.Account> userManager)
         {
             _context = context;
             _logger = logger;

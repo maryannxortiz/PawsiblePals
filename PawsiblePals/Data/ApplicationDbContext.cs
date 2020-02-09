@@ -10,7 +10,7 @@ using PawsiblePals.Data;
 
 namespace PawsiblePals.Data
 {
-    public class ApplicationDbContext : IdentityDbContext
+    public class ApplicationDbContext : IdentityDbContext<Account>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
@@ -18,7 +18,7 @@ namespace PawsiblePals.Data
         }
         public DbSet<Pet> Pets { get; set; }//this is a table in the database.
         public DbSet<Photo> Photos { get; set; }
-
+        public DbSet<Account> Accounts { get; set; }
     }
 
 }

@@ -17,14 +17,14 @@ namespace PawsiblePals.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class LoginModel : PageModel
     {
-        private readonly UserManager<IdentityUser> _userManager;
-        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly UserManager<PawsiblePals.Models.Account> _userManager;
+        private readonly SignInManager<PawsiblePals.Models.Account> _signInManager;
         private readonly ILogger<LoginModel> _logger;
         private readonly IEmailSender _emailSender;
 
-        public LoginModel(SignInManager<IdentityUser> signInManager, 
+        public LoginModel(SignInManager<PawsiblePals.Models.Account> signInManager, 
             ILogger<LoginModel> logger,
-            UserManager<IdentityUser> userManager,
+            UserManager<PawsiblePals.Models.Account> userManager,
             IEmailSender emailSender)
         {
             _userManager = userManager;

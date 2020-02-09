@@ -1,9 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UserSecretsId>aspnet-PawsiblePals-6E28AFEA-CE93-4BB6-A89E-F7EA2255CD42</UserSecretsId>
   </PropertyGroup>
+
+  <!--<ItemGroup>
+    <Compile Remove="Data\Migrations\20200208180104_MeepMorp.cs" />
+    <Compile Remove="Data\Migrations\20200208180104_MeepMorp.Designer.cs" />
+    <Compile Remove="Migrations\20200208181811_fixIdentity.cs" />
+    <Compile Remove="Migrations\20200208181811_fixIdentity.Designer.cs" />
+    <Compile Remove="Migrations\20200208182131_meep2.cs" />
+    <Compile Remove="Migrations\20200208182131_meep2.Designer.cs" />
+  </ItemGroup>-->
 
 
   <ItemGroup>
@@ -15,6 +24,11 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Data\Migrations\" />
   </ItemGroup>
 
 </Project>

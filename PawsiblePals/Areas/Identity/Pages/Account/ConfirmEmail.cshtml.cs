@@ -14,9 +14,9 @@ namespace PawsiblePals.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class ConfirmEmailModel : PageModel
     {
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly UserManager<PawsiblePals.Models.Account> _userManager;
 
-        public ConfirmEmailModel(UserManager<IdentityUser> userManager)
+        public ConfirmEmailModel(UserManager<PawsiblePals.Models.Account> userManager)
         {
             _userManager = userManager;
         }
