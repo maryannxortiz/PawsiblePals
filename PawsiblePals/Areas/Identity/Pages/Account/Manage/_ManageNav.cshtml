@@ -1,4 +1,4 @@
-﻿@inject SignInManager<PawsiblePals.Models.Account> SignInManager
+﻿@inject SignInManager<Account> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }

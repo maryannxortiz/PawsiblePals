@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using PawsiblePals.Models;
+
 namespace PawsiblePals.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
@@ -60,12 +61,10 @@ namespace PawsiblePals.Areas.Identity.Pages.Account
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
-            
+
             [DataType(DataType.MultilineText)]
             [Display(Name = "UserName")]
-             
-            public string UserName { get; set; } 
-
+            public string UserName { get; set; }
         }
 
         public async Task OnGetAsync(string returnUrl = null)
@@ -80,9 +79,8 @@ namespace PawsiblePals.Areas.Identity.Pages.Account
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             if (ModelState.IsValid)
             {
-                var user = new PawsiblePals.Models.Account
-                { 
-                    UserName = Input.UserName, 
+                var user = new PawsiblePals.Models.Account { 
+                    UserName = Input.UserName,
                     Email = Input.Email };
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
