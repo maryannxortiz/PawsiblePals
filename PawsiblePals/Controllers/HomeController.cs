@@ -21,6 +21,7 @@ namespace PawsiblePals.Controllers
 
         public HomeController(ILogger<HomeController> logger, UserManager<Account> userManager)
         {
+           
             _context = context;
             _logger = logger;
             _userManager = userManager;

@@ -102,11 +102,48 @@
         </div>
 
         <div class="col-4  text-center">
-           <h3>Help us do more</h3>
+            <h3>Help us do more</h3>
             <p>Every little bit can make a world of difference.</p>
             <br />
             <br />
             <button onclick="window.location.href ='/home/Donations#Cookies4pugs';">Donate!</button>
+        </div>
+        <div class="col-4">
+            <section>
+                <form id="account" method="post">
+
+                    <h2 class="text-center">Welcome back Mappers!</h2>
+
+                    <div class="text-danger validation-summary-valid" data-valmsg-summary="true">
+                        <ul>
+                            <li style="display: none"> </li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <label for="iEmail">Email</label>
+                        <input name="iEmail" class="form-control" id="iEmail" type="email" value="" data-val-required="The Email field is required." data-val-email="The Email field is not a valid e-mail address." data-val="true">
+                        <span class="text-danger field-validation-valid" data-valmsg-replace="true" data-valmsg-for="iEmail"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="iPassword">Password</label>
+                        <input name="iPassword" class="form-control" id="iPassword" type="password" data-val-required="The Password field is required." data-val="true">
+                        <span class="text-danger field-validation-valid" data-valmsg-replace="true" data-valmsg-for="iPassword"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <button class="btn btn-primary" id="login-submit" type="submit">Log in</button>
+                    </div>
+
+                    <div class="form-group">
+                        <p>
+                            <a id="forgot-password" href="/Identity/Account/ForgotPassword">Forgot your password?</a>
+                        </p>
+                    </div>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8FqvOLsu0YVIpIoVrh2FOrj7E8728y96mfWw1rlQGxTBoEUXllDxb7trmhtHZBY8EgKWmICgd9_3L7dnu6a5nmWelIP5SDzYm7nIcR12g_xsQhwnnsf47bBq4YPge16Of1YxZai1ocaHuMTxVeRlZ-k">
+
+                </form>
+            </section>
         </div>
     </div>
 </div>
