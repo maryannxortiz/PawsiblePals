@@ -9,8 +9,8 @@ namespace PawsiblePals.Models
     public class Account : IdentityUser
     {
 
-        //public int accountID { get; set; }
-        public string Username { get; set; }
+        public int accountID { get; set; }
+        public override string UserName { get; set; }
         public ICollection<Pet> Pet { get; set; }//this holds the instance of multiple pets.
        
 
