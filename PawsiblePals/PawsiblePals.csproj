@@ -5,6 +5,11 @@
     <UserSecretsId>aspnet-PawsiblePals-6E28AFEA-CE93-4BB6-A89E-F7EA2255CD42</UserSecretsId>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Migrations\20200211035342_morp.cs" />
+    <Compile Remove="Migrations\20200211035342_morp.Designer.cs" />
+  </ItemGroup>
+
   <!--<ItemGroup>
     <Compile Remove="Data\Migrations\20200208180104_MeepMorp.cs" />
     <Compile Remove="Data\Migrations\20200208180104_MeepMorp.Designer.cs" />
