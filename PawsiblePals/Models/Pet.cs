@@ -27,7 +27,7 @@ namespace PawsiblePals.Models
         public char Gender { get; set; }
         public int AccountID { get; set; }
         [ForeignKey("AccountID")]
-        public Account Account { get; set; }
+        public Account Account { get; set;}
 
     }
 
