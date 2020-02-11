@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using PawsiblePals.Models;
 using PawsiblePals.Data;
-
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PawsiblePals.Models
 {
@@ -25,8 +25,10 @@ namespace PawsiblePals.Models
         public bool PeopleFriendly { get; set; }
         public bool Neutered { get; set; }
         public char Gender { get; set; }
+        public int AccountID { get; set; }
+        [ForeignKey("AccountID")]
+        public Account Account { get; set; }
 
-        
     }
 
 

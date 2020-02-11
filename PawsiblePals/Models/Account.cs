@@ -10,7 +10,7 @@ namespace PawsiblePals.Models
     {
 
         public int accountID { get; set; }
-        //public int UserName { get; set; }
+        public override string UserName { get; set; }
         public ICollection<Pet> Pet { get; set; }//this holds the instance of multiple pets.
        
 
