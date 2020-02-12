@@ -1,6 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<Account> SignInManager
 @inject UserManager<Account> UserManager
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,23 +32,15 @@
                 <li class="nav-item, float-right">
                     <a class="nav-link" asp-area="" asp-controller="Home" asp-action="About">About <span class="sr-only">(current)</span></a>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Pets" asp-action="Create">SignUp<span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         More...
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a>
-                        <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Resource">Resources</a>
                         <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="FAQ">FAQ</a>
+                        <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Resource">Resources</a>
+                        <a class="dropdown-item" asp-area="" asp-controller="Home" asp-action="Contact">Contact Us</a>
                     </div>
-                <li class="nav-item">
-                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Search">Search <span class="sr-only">(current)</span></a>
-
-                </li>
 
                 @if (SignInManager.IsSignedIn(User))
                 {
@@ -62,9 +55,9 @@
                 }
                 else
                 {
-                    <li class="nav-item">
+                    @*<li class="nav-item">
                         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
-                    </li>
+                    </li>*@
                     <li class="nav-item">
                         <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
                     </li>

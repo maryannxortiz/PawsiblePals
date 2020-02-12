@@ -13,9 +13,10 @@ a {
     color: black;
     /*Navbar has links, please dont make this the same color as the navbar..*/
 }
-.background {
+.background{
     color: beige;
 }
+
 .btn-primary {
   color: #fff;
   background-color: #1b6ec2;
