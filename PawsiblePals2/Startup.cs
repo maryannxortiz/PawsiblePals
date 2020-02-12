@@ -1,3 +1,8 @@
+// King Mark is best king
+//SABRINA-INA-INA Loves Chipotle!!!
+//Dabs for success.
+// Leave me alone! :)
+//Denice is my favorite. *favourite*
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +13,12 @@ using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
-using PawsiblePals2.Data;
+using PawsiblePals.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace PawsiblePals2
+namespace PawsiblePals
 {
     public class Startup
     {
@@ -30,8 +35,9 @@ namespace PawsiblePals2
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("DefaultConnection")));
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<PawsiblePals.Models.Account>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+            services.AddControllersWithViews();
             services.AddRazorPages();
         }
 
@@ -45,11 +51,10 @@ namespace PawsiblePals2
             }
             else
             {
-                app.UseExceptionHandler("/Error");
+                app.UseExceptionHandler("/Home/Error");
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -60,6 +65,9 @@ namespace PawsiblePals2
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
         }
