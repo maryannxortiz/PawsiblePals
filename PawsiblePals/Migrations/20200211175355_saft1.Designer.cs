@@ -10,8 +10,8 @@ using PawsiblePals.Data;
 namespace PawsiblePals.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200208182557_meepmorp")]
-    partial class meepmorp
+    [Migration("20200211175355_saft1")]
+    partial class saft1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -208,12 +208,6 @@ namespace PawsiblePals.Migrations
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
-                    b.Property<int>("accountID")
-                        .HasColumnType("int");
-
-                    b.Property<string>("password")
-                        .HasColumnType("nvarchar(max)");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -234,7 +228,7 @@ namespace PawsiblePals.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AccountId")
+                    b.Property<string>("AccountID")
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Age")
@@ -270,7 +264,7 @@ namespace PawsiblePals.Migrations
 
                     b.HasKey("PetID");
 
-                    b.HasIndex("AccountId");
+                    b.HasIndex("AccountID");
 
                     b.ToTable("Pets");
                 });
@@ -349,9 +343,9 @@ namespace PawsiblePals.Migrations
 
             modelBuilder.Entity("PawsiblePals.Models.Pet", b =>
                 {
-                    b.HasOne("PawsiblePals.Models.Account", null)
+                    b.HasOne("PawsiblePals.Models.Account", "Account")
                         .WithMany("Pet")
-                        .HasForeignKey("AccountId");
+                        .HasForeignKey("AccountID");
                 });
 #pragma warning restore 612, 618
         }

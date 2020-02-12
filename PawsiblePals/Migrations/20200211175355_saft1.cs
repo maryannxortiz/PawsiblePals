@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace PawsiblePals.Migrations
 {
-    public partial class meepmorp : Migration
+    public partial class saft1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -39,9 +39,7 @@ namespace PawsiblePals.Migrations
                     TwoFactorEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false),
-                    accountID = table.Column<int>(nullable: false),
-                    password = table.Column<string>(nullable: true)
+                    AccessFailedCount = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -185,14 +183,14 @@ namespace PawsiblePals.Migrations
                     PeopleFriendly = table.Column<bool>(nullable: false),
                     Neutered = table.Column<bool>(nullable: false),
                     Gender = table.Column<string>(nullable: false),
-                    AccountId = table.Column<string>(nullable: true)
+                    AccountID = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Pets", x => x.PetID);
                     table.ForeignKey(
-                        name: "FK_Pets_AspNetUsers_AccountId",
-                        column: x => x.AccountId,
+                        name: "FK_Pets_AspNetUsers_AccountID",
+                        column: x => x.AccountID,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -238,9 +236,9 @@ namespace PawsiblePals.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Pets_AccountId",
+                name: "IX_Pets_AccountID",
                 table: "Pets",
-                column: "AccountId");
+                column: "AccountID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

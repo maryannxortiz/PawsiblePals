@@ -25,7 +25,7 @@ namespace PawsiblePals.Models
         public bool PeopleFriendly { get; set; }
         public bool Neutered { get; set; }
         public char Gender { get; set; }
-        public int AccountID { get; set; }
+        public string AccountID { get; set; }
         [ForeignKey("AccountID")]
         public Account Account { get; set; }
 
