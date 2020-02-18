@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -14,16 +16,35 @@ namespace PawsiblePals.Controllers
     {
         
         private readonly ApplicationDbContext _context;
+        private readonly UserManager<Account> _userManager;
 
-        public PetsController(ApplicationDbContext context)
+        public PetsController(ApplicationDbContext context, UserManager<Account> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Pets
+        [Authorize]
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Pets.ToListAsync());
+            var model1 = _context
+                .Pets
+                .ToList();
+
+            return View(model1);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> MyPets()
+        {
+            var user = await _userManager.GetUserAsync(User);
+
+            var model1 = _context
+                .Pets
+                .Where(x => x.AccountID == user.Id)
+                .ToList();
+            return View(model1);
         }
 
         // GET: Pets/Details/5
@@ -62,6 +83,8 @@ namespace PawsiblePals.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("PetID,Age,Weight,Color,Breed,Temperment,Gender,PetName,Species")] Pet pet)
         {
+            var user = await _userManager.GetUserAsync(User);
+            pet.AccountID = user.Id;
             if (ModelState.IsValid)
             {
                 _context.Add(pet);

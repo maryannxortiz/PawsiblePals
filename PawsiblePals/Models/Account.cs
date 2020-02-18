@@ -8,6 +8,6 @@ namespace PawsiblePals.Models
 {
     public class Account : IdentityUser
     {
-        public ICollection<Pet> Pet { get; set; }//this holds the instance of multiple pets.
+        public ICollection<Pet> Pets { get; set; }//this holds the instance of multiple pets.
     }
 }
