@@ -63,7 +63,7 @@ namespace PawsiblePals.Areas.Identity.Pages.Account
             public string ConfirmPassword { get; set; }
 
             [DataType(DataType.MultilineText)]
-            [Display(Name = "UserName")]
+            [Display(Name = "User")]
             public string UserName { get; set; }
         }
 
